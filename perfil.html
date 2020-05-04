@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>projeto_web</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/logreg.css">
+    <link rel="stylesheet" href="assets/css/Profile-Edit-Form-1.css">
+    <link rel="stylesheet" href="assets/css/Profile-Edit-Form.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-default" style="color: rgb(244,71,107)!important;">
+        <div class="container-fluid">
+            <div class="navbar-header"><a class="navbar-brand" href="#" style="color: rgb(244,71,107);font-weight: bold;"><i class="icon ion-ios-navigate"></i>&nbsp;Shut the Box</a><button data-toggle="collapse" class="navbar-toggle collapsed" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
+            <div
+                class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav">
+                    <li role="presentation"><a href="#" style="color: rgb(244,71,107)!important;font-size: 18px;font-weight: bold;">Jogar</a></li>
+                    <li role="presentation"><a href="#" style="color: rgb(244,71,107)!important;font-size: 18px;font-weight: bold;">Scores</a></li>
+                    <li role="presentation"><a href="#" style="color: rgb(244,71,107)!important;font-size: 18px;font-weight: bold;">Scores Globais</a></li>
+                    <li role="presentation"></li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="color: rgb(244,71,107)!important;font-size: 18px;font-weight: bold;">User<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation"><a href="#">Perfil</a></li>
+                            <li role="presentation"><a href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+        </div>
+        </div>
+    </nav>
+    <div class="container profile profile-view" id="profile">
+        <form>
+            <div class="row profile-row">
+                <div class="col-md-4 relative">
+                    <div class="avatar">
+                        <div class="avatar-bg center"></div>
+                    </div><input type="file" class="form-control" name="avatar-file"></div>
+                <div class="col-md-8">
+                    <h1>Profile </h1>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group"><label class="control-label">Nome</label><input class="form-control" type="text" name="firstname"></div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group"><label class="control-label">Apelido</label><input class="form-control" type="text" name="lastname"></div>
+                        </div>
+                    </div>
+                    <div class="form-group"><label class="control-label">NickName&nbsp;</label><input class="form-control" type="text" autocomplete="off" required="" name="email"></div>
+                    <div class="form-group"><label class="control-label">Email </label><input class="form-control" type="email" autocomplete="off" required="" name="email"></div>
+                    <div class="form-group"><label class="control-label">Password&nbsp;</label><input class="form-control" type="password" autocomplete="off" required="" name="email"></div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-12 content-right"><button class="btn btn-primary form-btn" type="submit">SAVE </button><button class="btn btn-danger form-btn" type="reset">CANCEL </button></div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/Profile-Edit-Form.js"></script>
+</body>
+
+</html>
