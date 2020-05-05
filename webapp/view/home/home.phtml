@@ -1,0 +1,58 @@
+<?php use ArmoredCore\WebObjects\Asset;
+use ArmoredCore\WebObjects\Layout;
+
+Layout::includeLayout('homeheader'); ?>
+<div  id="page-container">
+    <div class="section_" id="content-wrap">
+        <div>
+            <h1 style="text-align: center; width: 100% ">Jogo</h1>
+            <div style="margin: 29px; text-align: left">
+                <h1>Jogador - Ana</h1>
+                <div>
+                    <button class="btn btn-default" disabled type="button">1</button>
+                    <button class="btn btn-default" disabled type="button">2</button>
+                    <button class="btn btn-default" type="button">3</button>
+                    <button class="btn btn-default" disabled type="button">4</button>
+                    <button class="btn btn-default" disabled type="button">5</button>
+                    <button class="btn btn-default" type="button">6</button>
+                    <button class="btn btn-default" type="button">7</button>
+                    <button class="btn btn-default" disabled type="button">8</button>
+                    <button class="btn btn-default" type="button">9</button>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <h1>A jogar: - Ana</h1>
+            <div>
+                <h1 style="float: left;margin-left: 100px;font-size: 100px;width: 112px;margin-top: 0;">20</h1>
+                <img src="<?= Asset::image('1.png') ?>" width="112px" style="margin-right: 15px;">
+                <img src="<?= Asset::image('1.png') ?>" width="112px">
+                <h1 style="float: right;margin: 0;margin-right: 100px;width: 112px;font-size: 100px;">20</h1>
+            </div>
+            <div style="text-align: center; width: 100%; ">
+                <button class="btn btn-primary" type="button" style="margin-left: -210px; margin-top: 10px; ">Roll
+                    Dice
+                </button>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div style="margin: 29px; text-align: right">
+                    <div>
+                        <button class="btn btn-default" disabled type="button">1</button>
+                        <button class="btn btn-default" disabled type="button">2</button>
+                        <button class="btn btn-default" type="button">3</button>
+                        <button class="btn btn-default" disabled type="button">4</button>
+                        <button class="btn btn-default" disabled type="button">5</button>
+                        <button class="btn btn-default" type="button">6</button>
+                        <button class="btn btn-default" type="button">7</button>
+                        <button class="btn btn-default" disabled type="button">8</button>
+                        <button class="btn btn-default" type="button">9</button>
+                    </div>
+                    <h1>Jogador - Gilberto</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php Layout::includeLayout('footer'); ?>
+</div>

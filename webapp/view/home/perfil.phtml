@@ -1,0 +1,53 @@
+<?php use ArmoredCore\WebObjects\Layout;
+
+Layout::includeLayout('homeheader'); ?>
+<div id="page-container">
+    <div class="section_" id="content-wrap">
+        <div class="container profile profile-view" id="profile" style="margin-top: 75px">
+            <form id="perfil" action="" method="post">
+                <div class="row profile-row">
+                    <div class="col-md-4 relative">
+                        <div class="avatar">
+                            <div class="avatar-bg center"></div>
+                        </div>
+                        <input type="file" class="form-control" name="avatar-file"></div>
+                    <div class="col-md-8">
+                        <h1>Profile </h1>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group"><label class="control-label">Nome</label><input
+                                            class="form-control"
+                                            type="text"
+                                            name="firstname">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group"><label class="control-label">Apelido</label><input
+                                            class="form-control" type="text" name="lastname"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">NickName&nbsp;</label>
+                            <input class="form-control" type="text" autocomplete="off" required="" name="email">
+                        </div>
+                        <div class="form-group"><label class="control-label">Email </label>
+                            <input class="form-control" type="email" autocomplete="off" required="" name="email">
+                        </div>
+                        <div class="form-group"><label class="control-label">Password&nbsp;</label>
+                            <input class="form-control" type="password" autocomplete="off" required="" name="email">
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-12 content-right">
+                                <button class="btn btn-primary form-btn" type="submit">SAVE</button>
+                                <button class="btn btn-danger form-btn" type="reset">CLEAR</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <?php Layout::includeLayout('footer'); ?>
+</div>
