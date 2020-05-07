@@ -19,7 +19,7 @@ Router::get('home/register',	'HomeController/register');
 Router::get('home/home',	'HomeController/home');
 Router::get('home/perfil',	'HomeController/perfil');
 Router::get('home/scores',	'HomeController/scores');
-Router::get('home/scores_globais',	'HomeController/scores_globais');
+Router::get('home/top_10',	'HomeController/top_10');
 
 
 

@@ -39,8 +39,8 @@ class HomeController extends BaseController
     public function scores(){
         return View::make('home.scores');
     }
-    public function scores_globais(){
-        return View::make('home.scores_globais');
+    public function top_10(){
+        return View::make('home.top_10');
     }
 
     public function perfil(){
