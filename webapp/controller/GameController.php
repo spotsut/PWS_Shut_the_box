@@ -6,5 +6,5 @@ use ArmoredCore\WebObjects\View;
 
 class GameController
 {
-ola
+    
 }
