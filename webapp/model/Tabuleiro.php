@@ -9,7 +9,7 @@ class Tabuleiro
     public $numerosBloqueioP1, $numeroBloqueioP2;
 
     public function rolarDados(){
-
+        /*roda duas vezes*/
     }
 
     public function checkFinalJogadorP1($soma){
