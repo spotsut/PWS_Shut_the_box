@@ -3,9 +3,10 @@
 
 class Tabuleiro
 {
-    public $dado;
+    private $dado;
 
-    public $resultadoDado1, $resultadoDado2, $numerosBloqueioP1,$numeroBloqueioP2;
+    public $resultadoDado1, $resultadoDado2;
+    public $numerosBloqueioP1, $numeroBloqueioP2;
 
     public function rolarDados(){
 

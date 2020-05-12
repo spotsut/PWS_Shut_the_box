@@ -3,7 +3,7 @@
 
 class Dado
 {
-    public function dado(){
+    public function rolarDado(){
         $dado = 0;
         return $dado;
     }

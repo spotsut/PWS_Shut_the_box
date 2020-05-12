@@ -8,7 +8,6 @@ class UserController
 {
     public function register (){
         $msg = new Register();
-        
         $msg->register();
 
         return View::make('user.register', ['msg' => $msg]);
