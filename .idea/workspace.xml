@@ -1,78 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7001a1a5-552a-4369-8b2d-3d517ff80e18" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="7001a1a5-552a-4369-8b2d-3d517ff80e18" name="Default" comment="Style updated">
+      <change afterPath="$PROJECT_DIR$/public/img/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webapp/controller/GameController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webapp/controller/UserController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webapp/model/Login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webapp/model/Register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/WEBlogicMVC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WEBlogicMVC.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5ec1b3e0-78a2-472a-9f04-e11ddc4f4699.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5ec1b3e0-78a2-472a-9f04-e11ddc4f4699.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/router.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/home/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/home/index.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/home/register.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/home/register.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/home/scores_globais.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/home/top_10.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/layout/homeheader.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/layout/homeheader.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/model/GameEngine.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/model/GameEngine.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
-  </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_TABLE_DETAILS" value="true" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="webapp@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="webapp@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="webapp" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="f1cars" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="webapp@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="webapp" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -176,6 +131,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SearchEverywhereHistoryKey" value="Debugger::barDump&#9;null&#9;null&#10;code sty&#9;ACTION&#9;ChangeCodeStyleScheme&#10;Session::start&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
@@ -192,19 +149,19 @@
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\WWW\weblogicmvc\public\img" />
-      <recent name="E:\wamp64\wamp64\www\weblogicmvc\framework\ArmoredCore\WebObjects" />
-      <recent name="E:\wamp64\wamp64\www\weblogicmvc\public\html" />
-      <recent name="E:\wamp64\www\weblogicmvc\wlstudio\startup" />
-      <recent name="E:\wamp64\www\weblogicmvc\wlstudio\startup\lib" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\WWW\weblogicmvc\public\css" />
       <recent name="D:\WWW\weblogicmvc\webapp\view\home" />
       <recent name="E:\wamp64\www\weblogicmvc\vendor\Pd\Diagnostics" />
       <recent name="E:\wamp64\www\weblogicmvc\webapp\startup" />
       <recent name="E:\wamp64\www\weblogicmvc\webapp\view\layout" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\WWW\PWS_Shut_the_box\public\img" />
+      <recent name="D:\WWW\weblogicmvc\public\img" />
+      <recent name="E:\wamp64\wamp64\www\weblogicmvc\framework\ArmoredCore\WebObjects" />
+      <recent name="E:\wamp64\wamp64\www\weblogicmvc\public\html" />
+      <recent name="E:\wamp64\www\weblogicmvc\wlstudio\startup" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.weblogicmvc">
@@ -257,8 +214,20 @@
       <workItem from="1492542296752" duration="17485000" />
       <workItem from="1492626948768" duration="11495000" />
       <workItem from="1588670668577" duration="12346000" />
-      <workItem from="1588847482080" duration="945000" />
+      <workItem from="1588847482080" duration="2174000" />
+      <workItem from="1589121539930" duration="1772000" />
+      <workItem from="1589184371542" duration="306000" />
+      <workItem from="1589271054348" duration="13000" />
+      <workItem from="1589271087292" duration="902000" />
     </task>
+    <task id="LOCAL-00001" summary="Style updated">
+      <created>1588848495416</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588848495416</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -281,11 +250,31 @@
       <collection />
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Style updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Style updated" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="778" y="242" key="NewPhpClassDialog" timestamp="1588686097605">
+    <state x="552" y="160" key="#Plugins" timestamp="1589271114751">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="778" y="242" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588686097605" />
+    <state x="552" y="160" key="#Plugins/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1589271114751" />
+    <state x="640" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1589271062183">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1589271062183" />
+    <state x="583" y="87" key="CommitChangelistDialog2" timestamp="1588848494865">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="583" y="87" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588848494865" />
+    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1589184382300">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1589184382300" />
+    <state x="778" y="242" key="NewPhpClassDialog" timestamp="1589271937721">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="778" y="242" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1589271937721" />
     <state x="794" y="443" key="NewPhpFileDialog" timestamp="1588687768790">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
