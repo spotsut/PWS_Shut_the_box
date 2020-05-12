@@ -15,7 +15,7 @@ class HomeController extends BaseController
 
     public function index(){
 
-        return View::make('home.index');
+        return View::make('user.index');
     }
 
     public function start(){
@@ -29,7 +29,7 @@ class HomeController extends BaseController
     }
 
     public function register(){
-        return View::make('home.register');
+        return View::make('user.register', ['msg' => '']);
     }
 
     public function home(){

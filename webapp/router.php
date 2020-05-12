@@ -13,18 +13,16 @@ use ArmoredCore\Facades\Router;
  ****************************************************************************/
 
 Router::get('/',			'HomeController/index');
-Router::get('home/',		'HomeController/index');
-Router::get('home/index',	'HomeController/index');
-Router::get('home/register',	'HomeController/register');
+Router::get('user/',		'HomeController/index');
+Router::get('user/index',	'HomeController/index');
+Router::get('user/register',	'HomeController/register');
 Router::get('home/home',	'HomeController/home');
 Router::get('home/perfil',	'HomeController/perfil');
 Router::get('home/scores',	'HomeController/scores');
 Router::get('home/top_10',	'HomeController/top_10');
 
-
-
-
-
+/************ USER ***********/
+Router::post('user/register', 'UserController/register');
 
 
 

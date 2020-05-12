@@ -2,8 +2,8 @@
 
 class Register
 {
-    function register()
+    function register($nick, $email, $password)
     {
-
+        return "pila";
     }
 }
