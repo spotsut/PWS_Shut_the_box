@@ -1061,158 +1061,130 @@
     <table id="339" parent="5" name="users">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="340" parent="9" name="books">
-      <Engine>InnoDB</Engine>
-      <Collation>latin1_bin</Collation>
-    </table>
-    <column id="341" parent="338" name="id_score">
+    <column id="340" parent="338" name="id_score">
       <Position>1</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="342" parent="338" name="user">
+    <column id="341" parent="338" name="user">
       <Position>2</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="343" parent="338" name="score">
+    <column id="342" parent="338" name="score">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="344" parent="338" name="state">
+    <column id="343" parent="338" name="state">
       <Position>4</Position>
       <DataType>enum(&apos;Win&apos;, &apos;Lost&apos;)|0e</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="345" parent="338" name="data">
+    <column id="344" parent="338" name="data">
       <Position>5</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>current_timestamp()</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="346" parent="338" name="id_score_UNIQUE">
+    <index id="345" parent="338" name="id_score_UNIQUE">
       <ColNames>id_score</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="347" parent="338" name="fk_scores_users1_idx">
+    <index id="346" parent="338" name="fk_scores_users1_idx">
       <ColNames>user</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="348" parent="338" name="PRIMARY">
+    <key id="347" parent="338" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_score</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="349" parent="338" name="id_score_UNIQUE">
+    <key id="348" parent="338" name="id_score_UNIQUE">
       <ColNames>id_score</ColNames>
       <UnderlyingIndexName>id_score_UNIQUE</UnderlyingIndexName>
     </key>
-    <foreign-key id="350" parent="338" name="fk_scores_users1">
+    <foreign-key id="349" parent="338" name="fk_scores_users1">
       <ColNames>user</ColNames>
       <RefTableName>users</RefTableName>
       <RefColNames>id_user</RefColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="351" parent="339" name="id_user">
+    <column id="350" parent="339" name="id_user">
       <Position>1</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="352" parent="339" name="nickname">
+    <column id="351" parent="339" name="nickname">
       <Position>2</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="353" parent="339" name="nome">
+    <column id="352" parent="339" name="nome">
       <Position>3</Position>
       <DataType>varchar(45)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="354" parent="339" name="apelido">
+    <column id="353" parent="339" name="apelido">
       <Position>4</Position>
       <DataType>varchar(45)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="355" parent="339" name="email">
+    <column id="354" parent="339" name="email">
       <Position>5</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="356" parent="339" name="genero">
+    <column id="355" parent="339" name="genero">
       <Position>6</Position>
       <DataType>enum(&apos;M&apos;, &apos;F&apos;)|0e</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="357" parent="339" name="password">
+    <column id="356" parent="339" name="password">
       <Position>7</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="358" parent="339" name="acesso">
+    <column id="357" parent="339" name="acesso">
       <Position>8</Position>
       <DataType>int(11)|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="359" parent="339" name="id_user_UNIQUE">
+    <index id="358" parent="339" name="id_user_UNIQUE">
       <ColNames>id_user</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="360" parent="339" name="email_UNIQUE">
+    <index id="359" parent="339" name="email_UNIQUE">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="361" parent="339" name="PRIMARY">
+    <key id="360" parent="339" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_user</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="362" parent="339" name="id_user_UNIQUE">
+    <key id="361" parent="339" name="id_user_UNIQUE">
       <ColNames>id_user</ColNames>
       <UnderlyingIndexName>id_user_UNIQUE</UnderlyingIndexName>
     </key>
-    <key id="363" parent="339" name="email_UNIQUE">
+    <key id="362" parent="339" name="email_UNIQUE">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>email_UNIQUE</UnderlyingIndexName>
-    </key>
-    <column id="364" parent="340" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="365" parent="340" name="name">
-      <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="366" parent="340" name="ISBN">
-      <Position>3</Position>
-      <DataType>varchar(80)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="367" parent="340" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
     </key>
   </database-model>
 </dataSource>

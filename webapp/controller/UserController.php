@@ -10,10 +10,10 @@ class UserController
 {
     public function register (){
         $msg = new Register();
-        $nick = Post::get('nick');
-        $email = Post::get('email');
+        $msg->nickname_user = Post::get('nick');
+        $msg->email_user = Post::get('email');
         $pass = Post::get('password');
-        $msg = $msg->register_user($nick, $email, $pass);
+        $msg->msg = $msg->register_user($msg->nickname_user,  $msg->email_user, $pass);
 
         return View::make('user.register', ['msg' => $msg]);
     }

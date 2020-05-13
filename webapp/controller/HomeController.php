@@ -29,7 +29,8 @@ class HomeController extends BaseController
     }
 
     public function register(){
-        return View::make('user.register', ['msg' => '']);
+        $msg = new Register();
+        return View::make('user.register', ['msg' => $msg]);
     }
 
     public function home(){

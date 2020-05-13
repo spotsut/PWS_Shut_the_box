@@ -342,3 +342,21 @@ label{
     color: black;
     text-align: left;
 }
+.msg_erro {
+    background-color: black;
+    font-size: 20px;
+    color: red;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    border-radius: 15px
+}
+.msg_sucesso {
+    background-color: black;
+    font-size: 20px;
+    color: green;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    border-radius: 15px
+}
