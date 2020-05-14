@@ -24,6 +24,7 @@ Router::get('home/top_10',	'HomeController/top_10');
 /************ USER ***********/
 Router::post('user/register', 'UserController/register');
 
+Router::post('user/login', 'UserController/login');
 
 
 

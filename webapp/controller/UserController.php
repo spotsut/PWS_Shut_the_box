@@ -17,4 +17,13 @@ class UserController
 
         return View::make('user.register', ['msg' => $msg]);
     }
+
+    public function login (){
+        $msg = new Login();
+        $msg->email_user = Post::get('email');
+        $pass = Post::get('password');
+        $msg->msg = $msg->login_user( $msg->email_user, $pass);
+
+        return View::make('user.login', ['msg' => $msg]);
+    }
 }

@@ -25,7 +25,8 @@ class HomeController extends BaseController
     }
 
     public function login(){
-        Throw new Exception('Method not implemented. Do it yourself!');
+        $msg = new Login();
+        return View::make('user.login', ['msg' => $msg]);
     }
 
     public function register(){
