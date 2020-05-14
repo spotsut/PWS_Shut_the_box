@@ -26,7 +26,7 @@ class HomeController extends BaseController
 
     public function login(){
         $msg = new Login();
-        return View::make('user.login', ['msg' => $msg]);
+        return View::make('user.index', ['msg' => $msg]);
     }
 
     public function register(){

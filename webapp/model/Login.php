@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 class Login
 {
@@ -21,13 +21,14 @@ class Login
                 die("Connection failed: " . $conn->connect_error);
             }
 
-            $sql = "SELECT  email,password FROM users WHERE email = '$email' AND password = '$pass'";
-
-            if ($conn->query($sql) === TRUE) {
-
+            $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$pass'";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                $_SESSION["user"] = $result;
                 $msg = "<strong class='msg_sucesso'>O seu login foi feito com sucesso!</strong>";
             } else {
-                $msg = "<strong>Error: ($chk_email)</strong>>" . $sql . "<br>" . $conn->error;
+                /*$msg = "<strong>Error: ($chk_email)</strong>>" . $sql . "<br>" . $conn->error;*/
+                $msg = "<strong class='msg_erro'>E-mail ou Palavra pass estao incorretos! Verifique e tente novamente </strong>";
             }
 
             $conn->close();

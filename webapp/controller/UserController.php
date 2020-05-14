@@ -24,6 +24,6 @@ class UserController
         $pass = Post::get('password');
         $msg->msg = $msg->login_user( $msg->email_user, $pass);
 
-        return View::make('user.login', ['msg' => $msg]);
+        return View::make('user.index', ['msg' => $msg]);
     }
 }
