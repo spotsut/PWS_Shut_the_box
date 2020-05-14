@@ -7,7 +7,7 @@ class GameEngine
     private $estadoJogo;
 
     public function iniciarJogo(){
-        
+
     }
 
     public function getEstadoJogo(){

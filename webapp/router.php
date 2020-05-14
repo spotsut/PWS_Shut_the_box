@@ -23,7 +23,10 @@ Router::get('home/top_10',	'HomeController/top_10');
 
 /************ USER ***********/
 Router::post('user/register', 'UserController/register');
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 Router::post('user/index', 'UserController/login');
 
 
