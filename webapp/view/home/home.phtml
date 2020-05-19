@@ -1,5 +1,8 @@
 <?php use ArmoredCore\WebObjects\Asset;
 use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\URL;
+use ArmoredCore\WebObjects\Data;
+
 
 Layout::includeLayout('homeheader'); ?>
 <div  id="page-container">
@@ -9,14 +12,14 @@ Layout::includeLayout('homeheader'); ?>
             <div style="margin: 29px; text-align: left">
                 <h1>Jogador - Ana</h1>
                 <div>
-                    <button class="btn btn-default" disabled type="button">1</button>
-                    <button class="btn btn-default" disabled type="button">2</button>
+                    <button class="btn btn-default" type="button">1</button>
+                    <button class="btn btn-default" type="button">2</button>
                     <button class="btn btn-default" type="button">3</button>
-                    <button class="btn btn-default" disabled type="button">4</button>
-                    <button class="btn btn-default" disabled type="button">5</button>
+                    <button class="btn btn-default" type="button">4</button>
+                    <button class="btn btn-default" type="button">5</button>
                     <button class="btn btn-default" type="button">6</button>
                     <button class="btn btn-default" type="button">7</button>
-                    <button class="btn btn-default" disabled type="button">8</button>
+                    <button class="btn btn-default" type="button">8</button>
                     <button class="btn btn-default" type="button">9</button>
                 </div>
             </div>
@@ -30,23 +33,28 @@ Layout::includeLayout('homeheader'); ?>
                 <h1 style="float: right;margin: 0;margin-right: 100px;width: 112px;font-size: 100px;">20</h1>
             </div>
             <div style="text-align: center; width: 100%; ">
-                <button class="btn btn-primary" type="button" style="margin-left: -210px; margin-top: 10px; ">Roll
+               <a href="<?= Url::toRoute('home/home') ?>"> <button class="btn btn-primary" type="button" style="margin-left: -210px; margin-top: 10px; ">Roll
                     Dice
-                </button>
+                </button></a>
+                <a href="<?= Url::toRoute('home/home','ComecarJogo') ?>"> <button class="btn btn-primary" type="button" style=" margin-top: 10px; "> Iniciar Jogo
+                    </button></a>
+
             </div>
+
+
         </div>
         <div>
             <div>
                 <div style="margin: 29px; text-align: right">
                     <div>
-                        <button class="btn btn-default" disabled type="button">1</button>
-                        <button class="btn btn-default" disabled type="button">2</button>
+                        <button class="btn btn-default" type="button">1</button>
+                        <button class="btn btn-default" type="button">2</button>
                         <button class="btn btn-default" type="button">3</button>
-                        <button class="btn btn-default" disabled type="button">4</button>
-                        <button class="btn btn-default" disabled type="button">5</button>
+                        <button class="btn btn-default" type="button">4</button>
+                        <button class="btn btn-default" type="button">5</button>
                         <button class="btn btn-default" type="button">6</button>
                         <button class="btn btn-default" type="button">7</button>
-                        <button class="btn btn-default" disabled type="button">8</button>
+                        <button class="btn btn-default" type="button">8</button>
                         <button class="btn btn-default" type="button">9</button>
                     </div>
                     <h1>Jogador - Gilberto</h1>

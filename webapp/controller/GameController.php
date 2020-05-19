@@ -6,5 +6,12 @@ use ArmoredCore\WebObjects\View;
 
 class GameController
 {
+    public function ComecarJogo(){
+        $iniciajogo = new GameEngine();
     
-}
+
+        return View::make('home.home');
+    }
+
+
+    }
