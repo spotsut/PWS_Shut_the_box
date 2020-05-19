@@ -10,6 +10,8 @@ class Tabuleiro
 
     public function rolarDados(){
         /*roda duas vezes*/
+        $rolar= new Dado();
+        $rolar->rolarDado();
     }
 
     public function checkFinalJogadorP1($soma){
