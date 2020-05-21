@@ -1,5 +1,7 @@
 <?php
 /*session_start();*/
+use ArmoredCore\WebObjects\Session;
+use ArmoredCore\WebObjects\URL;
 
 class Login
 {
@@ -24,8 +26,11 @@ class Login
             $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$pass'";
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
-                $_SESSION["user"] = $result;
-                $msg = "<strong class='msg_sucesso'>O seu login foi feito com sucesso!</strong>";
+                $result = $result->fetch_row();
+                Session::set('user', $result);
+                header("Location: ".Url::toRoute('home/home'));
+                die("Location: ".Url::toRoute('home/home'));
+                //$msg = "<strong class='msg_sucesso'>O seu login foi feito com sucesso!</strong>";
             } else {
                 /*$msg = "<strong>Error: ($chk_email)</strong>>" . $sql . "<br>" . $conn->error;*/
                 $msg = "<strong class='msg_erro'>E-mail ou Palavra pass estao incorretos! Verifique e tente novamente </strong>";

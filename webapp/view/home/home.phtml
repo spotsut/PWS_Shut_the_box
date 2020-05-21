@@ -1,8 +1,10 @@
 <?php use ArmoredCore\WebObjects\Asset;
-use ArmoredCore\WebObjects\Layout;
-use ArmoredCore\WebObjects\URL;
 use ArmoredCore\WebObjects\Data;
+use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\Session;
+use ArmoredCore\WebObjects\URL;
 
+$engine = Data::get('ge');
 
 Layout::includeLayout('homeheader'); ?>
 <div  id="page-container">
@@ -28,16 +30,38 @@ Layout::includeLayout('homeheader'); ?>
             <h1>A jogar: - Ana</h1>
             <div>
                 <h1 style="float: left;margin-left: 100px;font-size: 100px;width: 112px;margin-top: 0;">20</h1>
-                <img src="<?= Asset::image('1.png') ?>" width="112px" style="margin-right: 15px;">
-                <img src="<?= Asset::image('1.png') ?>" width="112px">
+                <?php if (Session::has('gameEngine') && $engine->getEstadoJogo() == 2) { ?>
+                    <img src="<?= Asset::image($engine->tabuleiro->resultadoDado1 . '.png') ?>" width="112px"
+                         style="margin-right: 15px;">
+                    <img src="<?= Asset::image($engine->tabuleiro->resultadoDado2 . '.png') ?>" width="112px">
+                <?php } ?>
+
                 <h1 style="float: right;margin: 0;margin-right: 100px;width: 112px;font-size: 100px;">20</h1>
             </div>
             <div style="text-align: center; width: 100%; ">
-               <a href="<?= Url::toRoute('home/home') ?>"> <button class="btn btn-primary" type="button" style="margin-left: -210px; margin-top: 10px; ">Roll
-                    Dice
-                </button></a>
-                <a href="<?= Url::toRoute('home/home','ComecarJogo') ?>"> <button class="btn btn-primary" type="button" style=" margin-top: 10px; "> Iniciar Jogo
-                    </button></a>
+                <?php if (Session::has('gameEngine') && $engine->getEstadoJogo() == 1) { ?>
+                    <a href="<?= URL::toRoute('jogo/rolardados') ?>">
+                        <button class="btn btn-primary" type="button"
+                                style="margin-left: -210px; margin-top: 10px; ">
+                            Roll Dice
+                        </button>
+                    </a>
+                <?php } ?>
+                <?php if (Session::has('gameEngine') && $engine->getEstadoJogo() == 2) { ?>
+                    <a href="<?= URL::toRoute('jogo/rolardados') ?>">
+                        <button class="btn btn-primary" type="button"
+                                style="margin-left: -210px; margin-top: 10px; ">
+                            Roll Dice
+                        </button>
+                    </a>
+                <?php } ?>
+                <?php if (Session::has('gameEngine') && $engine->getEstadoJogo() == 0) { ?>
+                    <a href="<?= Url::toRoute('jogo/iniciarjogo') ?>">
+                        <button class="btn btn-primary" type="button" style=" margin-left: -210px; margin-top: 10px; ">
+                            Iniciar Jogo
+                        </button>
+                    </a>
+                <?php } ?>
 
             </div>
 
@@ -62,5 +86,7 @@ Layout::includeLayout('homeheader'); ?>
             </div>
         </div>
     </div>
-    <?php Layout::includeLayout('footer'); ?>
+    <?php Layout::includeLayout('footer');
+    Tracy\Debugger::barDump(Session::get('gameEngine'));
+    ?>
 </div>

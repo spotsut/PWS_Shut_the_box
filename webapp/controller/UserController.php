@@ -26,4 +26,9 @@ class UserController
 
         return View::make('user.index', ['msg' => $msg]);
     }
+
+    public function logout(){
+        Session::destroy();
+        return View::make('user.index');
+    }
 }

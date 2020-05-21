@@ -16,19 +16,21 @@ Router::get('/',			'HomeController/index');
 Router::get('user/',		'HomeController/index');
 Router::get('user/index',	'HomeController/index');
 Router::get('user/register',	'HomeController/register');
-Router::get('home/home',	'HomeController/home');
+
 Router::get('home/perfil',	'HomeController/perfil');
 Router::get('home/scores',	'HomeController/scores');
 Router::get('home/top_10',	'HomeController/top_10');
 
 /************ USER ***********/
 Router::post('user/register', 'UserController/register');
-
 Router::post('user/index', 'UserController/login');
-
-Router::post('home/home', 'GameController/ComecarJogo');
-
+Router::get('user/logout', 'UserController/logout');
 
 
+/************ GAME ***********/
+Router::post('home/home', 'GameController/iniciarJogo');
+Router::get('jogo/iniciarjogo', 'GameController/iniciarJogo');
+Router::get('jogo/rolardados','GameController/rolarDados');
+Router::get('home/home',	'GameController/home');
 
 /************** End of URLEncoder Routing Rules ************************************/

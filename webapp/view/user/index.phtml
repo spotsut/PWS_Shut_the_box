@@ -26,7 +26,7 @@ Layout::includeLayout('header') ?>
                             <form id="login" action="<?= Url::toRoute('user/index') ?>" method="post">
                                 <div class="top-margin">
                                     <label for="email">E-mail <span class="text-danger">*</span></label>
-                                    <input id="email" name="email" type="text" class="form-control">
+                                    <input id="email" name="email" type="text" class="form-control" value="<?= $msg->email_user?>">
                                 </div>
                                 <div class="top-margin">
                                     <label for="password">Password <span class="text-danger">*</span></label>

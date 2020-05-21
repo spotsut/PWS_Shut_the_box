@@ -4,21 +4,35 @@
 class Tabuleiro
 {
     private $dado;
-
     public $resultadoDado1, $resultadoDado2;
     public $numerosBloqueioP1, $numeroBloqueioP2;
 
-    public function rolarDados(){
-        /*roda duas vezes*/
-        $rolar= new Dado();
-        $rolar->rolarDado();
+    public function __construct() {
+        $this->dado = new Dado();
     }
 
-    public function checkFinalJogadorP1($soma){
+    public function rolarDados() {
+        $this->resultadoDado1 = $this->dado->rolarDado();
+        $this->resultadoDado2 = $this->dado->rolarDado();
+    }
+
+    public function checkFinalJogadaP1($soma) {
 
     }
 
-    public function checkFinalJogadorPointsP2($soma){
+    public function checkFinalJogadaP2($soma) {
+
+    }
+
+    public function checkFinalJogo($soma) {
+
+    }
+
+    public function getVencedor() {
+
+    }
+
+    public function getPointsVencedor() {
 
     }
 }

@@ -4,6 +4,7 @@ use ArmoredCore\WebObjects\Redirect;
 use ArmoredCore\WebObjects\Session;
 use ArmoredCore\WebObjects\View;
 
+
 /**
  * Created by PhpStorm.
  * User: smendes
@@ -32,10 +33,6 @@ class HomeController extends BaseController
     public function register(){
         $msg = new Register();
         return View::make('user.register', ['msg' => $msg]);
-    }
-
-    public function home(){
-        return View::make('home.home');
     }
 
     public function scores(){

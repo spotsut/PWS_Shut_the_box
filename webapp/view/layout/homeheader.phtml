@@ -3,7 +3,8 @@
 use ArmoredCore\Facades\AssetBundler;
 use ArmoredCore\WebObjects\Asset;
 use ArmoredCore\WebObjects\URL;
-
+use ArmoredCore\WebObjects\Session;
+$user = Session::get('user');
 ?>
 
 <!DOCTYPE html>
@@ -60,14 +61,14 @@ use ArmoredCore\WebObjects\URL;
                     <a href="<?= URL::toRoute('home/top_10') ?>">TOP 10</a>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">< user >
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?=$user[1] ?>
                         <b class="caret"> </b>
                     </a>
                     <ul class="dropdown-menu">
                         <li class="active"><a href="<?= Url::toRoute('home/perfil') ?>">Perfil</a>
                         </li>
                         <li>
-                            <a href="<?= Url::toRoute('devtools/restcontrollerform') ?>">Logout</a>
+                            <a href="<?= Url::toRoute('user/logout') ?>">Logout</a>
                         </li>
                     </ul>
                 </li>
