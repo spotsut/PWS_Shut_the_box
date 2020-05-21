@@ -7,11 +7,24 @@ use ArmoredCore\WebObjects\View;
 class GameController
 {
     public function ComecarJogo(){
-        $iniciajogo = new GameEngine();
+        $gameEngine = new GameEngine();
+        $gameEngine->iniciarJogo();
+
+        Session::get('ge', $gameEngine);
     
 
-        return View::make('home.home');
+        return View::make('home.home', $gameEngine);
+    }
+    public function rolarDados(){
+        $gameEngine = Session::get('ge');
+        $gameEngine->rolarDados();
+        $gameEngine->updateEstadoJogo();
+
+        Session::get('ge', $gameEngine);
+
+
+        return View::make('home.home', $gameEngine);
     }
 
 
-    }
+}

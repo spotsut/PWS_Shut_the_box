@@ -26,8 +26,8 @@ Router::post('user/register', 'UserController/register');
 
 Router::post('user/index', 'UserController/login');
 
-
 Router::post('home/home', 'GameController/ComecarJogo');
+
 
 
 
