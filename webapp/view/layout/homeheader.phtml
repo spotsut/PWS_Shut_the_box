@@ -65,7 +65,11 @@ $user = Session::get('user');
                         <b class="caret"> </b>
                     </a>
                     <ul class="dropdown-menu">
-                        <li class="active"><a href="<?= Url::toRoute('home/perfil') ?>">Perfil</a>
+                        <li class="active">
+                            <a href="<?= Url::toRoute('home/perfil') ?>">Perfil</a>
+                        </li>
+                        <li class="active">
+                            <a href="<?= Url::toRoute('home/ban') ?>">Gerir Bans</a>
                         </li>
                         <li>
                             <a href="<?= Url::toRoute('user/logout') ?>">Logout</a>

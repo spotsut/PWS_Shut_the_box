@@ -4,7 +4,6 @@
 class NumerosBloqueio
 {
     private $numerosBloqueio;
-    private $selecionarNumeros;
 
     public function __construct($selecionarNumeros)
     {

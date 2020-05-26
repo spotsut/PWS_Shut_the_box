@@ -1,0 +1,45 @@
+<?php use ArmoredCore\WebObjects\Layout;
+
+Layout::includeLayout('homeheader'); ?>
+<div id="page-container">
+    <div class="section_" id="content-wrap">
+        <div>
+            <h1 style="text-align: center; width: 100% ">Gerir Bans</h1>
+        </div>
+        <div style="margin: 15px;">
+            <div class="table-responsive" style="width: 100%;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <div class="panel panel-default panel-table">
+                                <div class="panel-body">
+                                    <table class="table table-striped table-bordered table-list">
+                                        <thead>
+                                        <tr>
+                                            <th><em class="fa fa-cog"></em>Ban</th>
+                                            <th class="hidden-xs">ID</th>
+                                            <th>Jogador</th>
+                                            <th>Data</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td align="center">
+                                                <a class="btn btn-danger"><em class="fa fa-crosshairs"></em></a>
+                                            </td>
+                                            <td class="hidden-xs">1</td>
+                                            <td>Ana</td>
+                                            <td>2020-12-24</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php Layout::includeLayout('footer'); ?>
+</div>

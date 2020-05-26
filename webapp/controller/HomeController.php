@@ -38,6 +38,11 @@ class HomeController extends BaseController
     public function scores(){
         return View::make('home.scores');
     }
+
+    public function ban(){
+        return View::make('home.gerir_bans');
+    }
+
     public function top_10(){
         return View::make('home.top_10');
     }

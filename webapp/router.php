@@ -20,6 +20,7 @@ Router::get('user/register',	'HomeController/register');
 Router::get('home/perfil',	'HomeController/perfil');
 Router::get('home/scores',	'HomeController/scores');
 Router::get('home/top_10',	'HomeController/top_10');
+Router::get('home/ban',	'HomeController/ban');
 
 /************ USER ***********/
 Router::post('user/register', 'UserController/register');
