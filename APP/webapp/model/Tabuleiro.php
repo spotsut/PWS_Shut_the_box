@@ -8,6 +8,9 @@ class Tabuleiro
     public $numerosBloqueioP1, $numeroBloqueioP2;
 
     public function __construct() {
+        $this->numeroBloqueioP1 = new NumerosBloqueio();
+        $this->numeroBloqueioP2 = new NumerosBloqueio();
+
         $this->dado = new Dado();
     }
 

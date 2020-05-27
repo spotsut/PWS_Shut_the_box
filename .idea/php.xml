@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/APP/vendor/Dave1010/Hug" />
+      <path value="$PROJECT_DIR$/APP/vendor/PetrKnap/Php" />
+      <path value="$PROJECT_DIR$/APP/vendor/Windwalker/Cache" />
+      <path value="$PROJECT_DIR$/APP/vendor/Windwalker/edge" />
+      <path value="$PROJECT_DIR$/APP/vendor/Windwalker/http" />
+      <path value="$PROJECT_DIR$/APP/vendor/Windwalker/loader" />
+      <path value="$PROJECT_DIR$/APP/vendor/Windwalker/renderer" />
+      <path value="$PROJECT_DIR$/APP/vendor/Windwalker/structure" />
+      <path value="$PROJECT_DIR$/APP/vendor/Windwalker/uri" />
+      <path value="$PROJECT_DIR$/APP/vendor/Netpromotion/Profiler" />
+      <path value="$PROJECT_DIR$/APP/vendor/phpFastCache/Bundle" />
+      <path value="$PROJECT_DIR$/APP/vendor/phpFastCache/Cache" />
+      <path value="$PROJECT_DIR$/APP/vendor/phpFastCache/Core" />
+      <path value="$PROJECT_DIR$/APP/vendor/phpFastCache/Drivers" />
+      <path value="$PROJECT_DIR$/APP/vendor/phpFastCache/Entities" />
+      <path value="$PROJECT_DIR$/APP/vendor/phpFastCache/Exceptions" />
+      <path value="$PROJECT_DIR$/APP/vendor/phpFastCache/Proxy" />
+      <path value="$PROJECT_DIR$/APP/vendor/phpFastCache/Util" />
+      <path value="$PROJECT_DIR$/APP/vendor/zendframework/zend-diactoros" />
+      <path value="$PROJECT_DIR$/APP/vendor/php-activerecord/examples" />
+      <path value="$PROJECT_DIR$/APP/vendor/php-activerecord/lib" />
+      <path value="$PROJECT_DIR$/APP/vendor/php-activerecord/test" />
+      <path value="$PROJECT_DIR$/APP/vendor/Pd/Diagnostics" />
+      <path value="$PROJECT_DIR$/APP/vendor/Hoa/Consistency" />
+      <path value="$PROJECT_DIR$/APP/vendor/Hoa/Event" />
+      <path value="$PROJECT_DIR$/APP/vendor/Hoa/Exception" />
+      <path value="$PROJECT_DIR$/APP/vendor/Hoa/Protocol" />
+      <path value="$PROJECT_DIR$/APP/vendor/Hoa/Socket" />
+      <path value="$PROJECT_DIR$/APP/vendor/Hoa/Websocket" />
+      <path value="$PROJECT_DIR$/APP/vendor/Psr/Cache" />
+      <path value="$PROJECT_DIR$/APP/vendor/Psr/Container" />
+      <path value="$PROJECT_DIR$/APP/vendor/Psr/Http" />
+      <path value="$PROJECT_DIR$/APP/vendor/Psr/http-message" />
+      <path value="$PROJECT_DIR$/APP/vendor/Psr/Hug" />
+      <path value="$PROJECT_DIR$/APP/vendor/Psr/Interop" />
+      <path value="$PROJECT_DIR$/APP/vendor/Psr/Log" />
+      <path value="$PROJECT_DIR$/APP/vendor/Aura/Di" />
+      <path value="$PROJECT_DIR$/APP/vendor/Aura/Filter" />
+      <path value="$PROJECT_DIR$/APP/vendor/Aura/Includer" />
+      <path value="$PROJECT_DIR$/APP/vendor/Kdyby/Extension" />
+      <path value="$PROJECT_DIR$/APP/vendor/Nette/Iterators" />
+      <path value="$PROJECT_DIR$/APP/vendor/Nette/PhpGenerator" />
+      <path value="$PROJECT_DIR$/APP/vendor/Nette/Utils" />
+      <path value="$PROJECT_DIR$/APP/vendor/Stolz/Assets" />
+      <path value="$PROJECT_DIR$/APP/vendor/Tracy/assets" />
+      <path value="$PROJECT_DIR$/APP/vendor/Tracy/Bridges" />
+      <path value="$PROJECT_DIR$/APP/vendor/legacy/Haanga" />
+      <path value="$PROJECT_DIR$/APP/vendor/Filisko/PDOplus" />
+      <path value="$PROJECT_DIR$/APP/vendor/Symfony/Component" />
+      <path value="$PROJECT_DIR$/APP/vendor/composer" />
+    </include_path>
+  </component>
+</project>
