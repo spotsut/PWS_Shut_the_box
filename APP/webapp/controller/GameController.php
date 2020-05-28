@@ -36,4 +36,23 @@ class GameController
 
         return View::make('home.home', ['ge'=> $engine]);
     }
+    public function selecionaNumeroP1($number){
+        //$engine = Session::get('gameEngine');
+        $engine = new GameEngine();
+
+        $somaDados= $engine->tabuleiro->resultadoDado1 + $engine->tabuleiro->resultadoDado2;
+
+    $seletor= $engine->tabuleiro->numerosBloqueioP1->seletorNumeros;
+
+    if($seletor->validateNumber($number,$engine->tabuleiro->numerosBloqueioP1)){
+        $seletor->updateSelection($number);
+
+        if ($seletor->checkSelectionTotal($somaDados)){
+            $engine->updateEstadoJogo();
+
+            $engine->tabuleiro->numerosBloqueioP1->bloquearNumeros($seletor->getNumerosSelecionados(),$somaDados);
+            $seletor->clearSelection();
+        }
+    }
+    }
 }

@@ -3,7 +3,8 @@
 
 class SeletorNumeros
 {
-    private $numerosSelecionados;
+    private $numerosSelecionados = array ();
+
 
     public function  validadeNumber($userNumber, $numerosBloqueio)
     {
@@ -14,6 +15,9 @@ class SeletorNumeros
         {
             return true;
         }
+    }
+    public function  getNumeroSelecionado(){
+
     }
 
     public function updateSelection($userNumber){
