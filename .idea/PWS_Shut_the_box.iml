@@ -1,58 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$">
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Aura/Di" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Aura/Filter" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Aura/Includer" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Dave1010/Hug" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Filisko/PDOplus" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Hoa/Consistency" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Hoa/Event" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Hoa/Exception" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Hoa/Protocol" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Hoa/Socket" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Hoa/Websocket" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Kdyby/Extension" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Netpromotion/Profiler" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Nette/Iterators" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Nette/PhpGenerator" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Nette/Utils" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Pd/Diagnostics" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/PetrKnap/Php" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Psr/Cache" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Psr/Container" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Psr/Http" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Psr/Hug" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Psr/Interop" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Psr/Log" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Psr/http-message" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Stolz/Assets" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Symfony/Component" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Tracy/Bridges" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Tracy/assets" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Windwalker/Cache" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Windwalker/edge" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Windwalker/http" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Windwalker/loader" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Windwalker/renderer" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Windwalker/structure" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/Windwalker/uri" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/composer" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/legacy/Haanga" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/php-activerecord/examples" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/php-activerecord/lib" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/php-activerecord/test" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/phpFastCache/Bundle" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/phpFastCache/Cache" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/phpFastCache/Core" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/phpFastCache/Drivers" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/phpFastCache/Entities" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/phpFastCache/Exceptions" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/phpFastCache/Proxy" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/phpFastCache/Util" />
-      <excludeFolder url="file://$MODULE_DIR$/APP/vendor/zendframework/zend-diactoros" />
-    </content>
+    <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
