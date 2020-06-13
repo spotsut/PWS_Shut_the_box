@@ -9,11 +9,15 @@
 
 Utilizadores:
 
-Admin
+Admin\
 pass: 123
 
-utilizador1
+utilizador1\
 pass: 123
+
+jira: https://huf.atlassian.net/jira/software/projects/PSI/boards/5/roadmap
+
+GitHub: git@github.com:spotsut/PWS_Shut_the_box.git
 
 > Programação Web Servidor @ 2020\
 
