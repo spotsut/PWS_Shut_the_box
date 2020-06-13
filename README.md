@@ -12,7 +12,7 @@ Utilizadores:
 Admin\
 pass: 123
 
-utilizador1\
+Jogador1\
 pass: 123
 
 jira: https://huf.atlassian.net/jira/software/projects/PSI/boards/5/roadmap
