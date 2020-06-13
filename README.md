@@ -1,5 +1,6 @@
-# Projeto de Metodologias de Desenvolvimento de Software: PWS
+# PWS
 
+**Grupo:PL1-A**\
 **Nome do Estudante: Alexandre Bertolo**\
 `2190754`\
 **Nome do Estudante: João Patrocinio**\
