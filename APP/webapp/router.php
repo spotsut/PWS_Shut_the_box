@@ -26,7 +26,7 @@ Router::get('home/ban',	'HomeController/ban');
 Router::post('user/register', 'UserController/register');
 Router::post('user/index', 'UserController/login');
 Router::get('user/logout', 'UserController/logout');
-Router::get('user/atualizar', 'UserController/atualizar');
+Router::post('user/atualizar', 'UserController/atualizar');
 
 
 /************ GAME ***********/
