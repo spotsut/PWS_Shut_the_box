@@ -1,10 +1,13 @@
 <?php use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\Session;
+
+$user = Session::get('user');
 
 Layout::includeLayout('homeheader'); ?>
 <div id="page-container">
     <div class="section_" id="content-wrap">
         <div class="container profile profile-view" id="profile" style="margin-top: 75px">
-            <form id="perfil" action="" method="post">
+            <form id="perfil" action="<?= Url::toRoute('user/atualizar') ?>" method="post">
                 <div class="row profile-row">
                     <div class="col-md-4 relative">
                         <div class="avatar">
@@ -16,32 +19,32 @@ Layout::includeLayout('homeheader'); ?>
                         <hr>
                         <div class="row">
                             <div class="col-md-6 col-sm-12">
-                                <div class="form-group"><label class="control-label">Nome</label><input
-                                            class="form-control"
-                                            type="text"
-                                            name="firstname">
+                                <div class="form-group"><label class="control-label">Nome</label>
+                                    <input class="form-control" type="text" name="firstname" value="<?= $user[2] ?>">
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-12">
-                                <div class="form-group"><label class="control-label">Apelido</label><input
-                                            class="form-control" type="text" name="lastname"></div>
+                                <div class="form-group"><label class="control-label">Apelido</label>
+                                    <input class="form-control" type="text" name="lastname" value="<?= $user[3] ?>"></div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label">NickName&nbsp;</label>
-                            <input class="form-control" type="text" autocomplete="off" required="" name="email">
+                            <input class="form-control" type="text" autocomplete="off" required="" name="nickname"
+                                   value="<?= $user[1] ?>">
                         </div>
                         <div class="form-group"><label class="control-label">Email </label>
-                            <input class="form-control" type="email" autocomplete="off" required="" name="email">
+                            <input class="form-control" type="email" autocomplete="off" required="" name="email"
+                                   value="<?= $user[4] ?>">
                         </div>
                         <div class="form-group"><label class="control-label">Password&nbsp;</label>
-                            <input class="form-control" type="password" autocomplete="off" required="" name="email">
+                            <input class="form-control" type="password" autocomplete="off" required="" name="password"
+                                   value="<?= $user[6] ?>">
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-md-12 content-right">
                                 <button class="btn btn-primary form-btn" type="submit">SAVE</button>
-                                <button class="btn btn-danger form-btn" type="reset">CLEAR</button>
                             </div>
                         </div>
                     </div>
@@ -49,5 +52,7 @@ Layout::includeLayout('homeheader'); ?>
             </form>
         </div>
     </div>
-    <?php Layout::includeLayout('footer'); ?>
+    <?php Layout::includeLayout('footer');
+    Tracy\Debugger::barDump($user);
+    ?>
 </div>

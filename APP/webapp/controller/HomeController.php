@@ -36,7 +36,10 @@ class HomeController extends BaseController
     }
 
     public function scores(){
-        return View::make('home.scores');
+        $user = Session::get('user');
+        $scores = new Consultas();
+        $scores = $scores->scorespessoais($user);
+        return View::make('home.scores',['scores' => $scores]);
     }
 
     public function ban(){
@@ -44,7 +47,9 @@ class HomeController extends BaseController
     }
 
     public function top_10(){
-        return View::make('home.top_10');
+        $scores = new Consultas();
+        $scores = $scores->topscores();
+        return View::make('home.top_10',['scores' => $scores]);
     }
 
     public function perfil(){
