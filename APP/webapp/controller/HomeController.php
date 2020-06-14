@@ -43,7 +43,9 @@ class HomeController extends BaseController
     }
 
     public function ban(){
-        return View::make('home.gerir_bans');
+        $users = new Consultas();
+        $users = $users->users();
+        return View::make('home.gerir_bans', ['users' => $users]);
     }
 
     public function top_10(){

@@ -29,19 +29,19 @@ Layout::includeLayout('homeheader'); ?>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                       <!-- <?php /*
-                                        while ($row = $scores->fetch()) { ?>
-                                            <td align="center">
-                                                <a class="btn btn-danger"><em class="fa fa-crosshairs"></em></a>
-                                            </td>
+                                       <?php
+                                       foreach ($scores as &$row) {?>
                                             <tr class="click_categories"
-                                                data-href='manage_categories.php?id_category=<?=$row[0]?>'>
-                                                <td><?= $row['id_category'] ?></td>
+                                                data-href='manage.php?id_category=<?=$row[0]?>'>
+                                                <td align="center">
+                                                    <a class="btn btn-danger"><em class="fa fa-crosshairs"></em></a>
+                                                </td>
+                                                <td><?= $row[0] ?></td>
                                                 <td><?= $row[1] ?></td>
                                                 <td><?= $row[2] ?></td>
                                                 <td><?= $row[4] ?></td>
                                             </tr>
-                                        <?php } */?>-->
+                                        <?php }?>
                                         </tbody>
                                     </table>
 
@@ -54,5 +54,6 @@ Layout::includeLayout('homeheader'); ?>
             </div>
         </div>
     </div>
-    <?php Layout::includeLayout('footer'); ?>
+    <?php Layout::includeLayout('footer');
+    Tracy\Debugger::barDump($scores);?>
 </div>

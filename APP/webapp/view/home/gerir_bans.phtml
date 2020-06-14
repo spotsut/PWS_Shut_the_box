@@ -1,5 +1,9 @@
 <?php use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\Data;
+use ArmoredCore\WebObjects\Session;
+use ArmoredCore\WebObjects\URL;
 
+$users = Data::get('users');
 Layout::includeLayout('homeheader'); ?>
 <div id="page-container">
     <div class="section_" id="content-wrap">
@@ -19,18 +23,26 @@ Layout::includeLayout('homeheader'); ?>
                                             <th><em class="fa fa-cog"></em>Ban</th>
                                             <th class="hidden-xs">ID</th>
                                             <th>Jogador</th>
-                                            <th>Data</th>
+                                            <th>Email</th>
+                                            <th>Genero</th>
+                                            <th>Accesso</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <td align="center">
-                                                <a class="btn btn-danger"><em class="fa fa-crosshairs"></em></a>
-                                            </td>
-                                            <td class="hidden-xs">1</td>
-                                            <td>Ana</td>
-                                            <td>2020-12-24</td>
-                                        </tr>
+                                        <?php
+                                        foreach ($users as &$row) {?>
+                                            <tr class="click_categories"
+                                                data-href='manage.php?id_category=<?=$row[0]?>'>
+                                                <td align="center">
+                                                    <a class="btn btn-danger"><em class="fa fa-crosshairs"></em></a>
+                                                </td>
+                                                <td><?= $row[0] ?></td>
+                                                <td><?= $row[1] ?></td>
+                                                <td><?= $row[4] ?></td>
+                                                <td><?= $row[5] ?></td>
+                                                <td><?= $row[7] ?></td>
+                                            </tr>
+                                        <?php }?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -41,5 +53,6 @@ Layout::includeLayout('homeheader'); ?>
             </div>
         </div>
     </div>
-    <?php Layout::includeLayout('footer'); ?>
+    <?php Layout::includeLayout('footer');
+    Tracy\Debugger::barDump($users)?>
 </div>
