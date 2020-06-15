@@ -18,7 +18,7 @@ Layout::includeLayout('homeheader'); ?>
                         $numerosBloqueadosP1 = $engine->tabuleiro->numeroBloqueioP1->getNumerosBloqueio();
                         for ($i = 1; $i < 10; $i++) {
                             if ($numerosBloqueadosP1[$i] == false) { ?>
-                                <a href="<?= URL::toRoute('jogo/seleciona', $i) ?>">
+                                <a href="<?= URL::toRoute('jogo/selecionaP1', $i) ?>">
                                     <button class="btn btn-default" type="button"><?= $i ?></button>
                                 </a>
                             <?php } else { ?>
