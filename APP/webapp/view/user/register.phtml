@@ -2,7 +2,7 @@
 use ArmoredCore\WebObjects\URL;
 use ArmoredCore\WebObjects\Data;
 
-$msg = Data::get('msg');
+$user = Data::get('user');
 
 Layout::includeLayout('header') ?>
 
@@ -18,7 +18,7 @@ Layout::includeLayout('header') ?>
 
                 <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 section_" style="margin-top: 0px">
                     <div class="panel panel-default" style="background-color: transparent; border: none">
-                        <p style="color: white; width: 100%; text-align: center;"><?= $msg->msg ?></p>
+
                         <div class="panel-body">
                             <h1 class="thin text-center" style="color: black">Register  your account</h1>
                             <p class="text-center text-muted" style="color: white">Lorem ipsum dolor sit amet, <a style="color: black" href="<?= Url::toRoute('user/index')?>">Login</a> adipisicing elit. Quo nulla quibusdam cum doloremque incidunt nemo sunt a tenetur omnis odio. </p>
@@ -26,13 +26,21 @@ Layout::includeLayout('header') ?>
 
                             <form id="register" action="<?= Url::toRoute('user/register') ?>" method="post">
                                 <div class="top-margin">
+                                    <label for="firstname">First Name <span class="text-danger">*</span></label>
+                                    <input id="firstname" name="firstname" type="text" class="form-control" value="<?=$user->firstname?>">
+                                </div>
+                                <div class="top-margin">
+                                    <label for="lastname">Last Name <span class="text-danger">*</span></label>
+                                    <input id="lastname" name="lastname" type="text" class="form-control" value="<?=$user->lastname?>">
+                                </div>
+                                <div class="top-margin">
                                     <label for="nickname">Nickname <span class="text-danger">*</span></label>
-                                    <input id="nickname" name="nick" type="text" class="form-control" value="<?=$msg->nickname_user ?>">
+                                    <input id="nickname" name="nickname" type="text" class="form-control" value="<?=$user->nickname?>">
                                 </div>
 
                                 <div class="top-margin">
                                     <label for="email">E-mail <span class="text-danger">*</span></label>
-                                    <input id="email" type="email" name="email" class="form-control" value="<?=$msg->email_user ?>">
+                                    <input id="email" type="email" name="email" class="form-control" value="<?=$user->email?>">
                                 </div>
                                 <div class="top-margin">
                                     <label for="password">Password <span class="text-danger">*</span></label>

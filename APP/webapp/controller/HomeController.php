@@ -26,31 +26,29 @@ class HomeController extends BaseController
     }
 
     public function login(){
-        $msg = new Login();
-        return View::make('user.index', ['msg' => $msg]);
+        return View::make('user.index');
     }
 
     public function register(){
-        $msg = new Register();
-        return View::make('user.register', ['msg' => $msg]);
+        return View::make('user.register');
     }
 
     public function scores(){
         $user = Session::get('user');
-        $scores = new Consultas();
-        $scores = $scores->scorespessoais($user);
-        return View::make('home.scores',['scores' => $scores]);
+        $scores =  Score::find('all', array('conditions' => 'user='.$user->id_user, 'order' => 'data desc'));
+        return View::make('home.scores', ['scores' => $scores]);
     }
 
     public function ban(){
-        $users = new Consultas();
-        $users = $users->users();
-        return View::make('home.gerir_bans', ['users' => $users]);
+        $user = Session::get('user');
+        if ($user->acesso != 1) {
+            Redirect::toRoute('home/home');
+        }
+        return View::make('home.gerir_bans');
     }
 
     public function top_10(){
-        $scores = new Consultas();
-        $scores = $scores->topscores();
+        $scores = Score::find('all', array('order' => 'score desc', 'limit' => 10));
         return View::make('home.top_10',['scores' => $scores]);
     }
 

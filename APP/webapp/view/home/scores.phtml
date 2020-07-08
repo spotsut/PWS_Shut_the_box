@@ -2,10 +2,13 @@
 use ArmoredCore\WebObjects\Data;
 use ArmoredCore\WebObjects\Session;
 use ArmoredCore\WebObjects\URL;
-
+$user = Session::get('user');
+Layout::includeLayout('homeheader');
 $scores = Data::get('scores');
-
-Layout::includeLayout('homeheader'); ?>
+$games = Score::count(array('conditions'=> 'user='.$user->id_user));
+$lost = Score::count(array('conditions'=> 'user='.$user->id_user. ' and state like \'Lost\''));
+$win = Score::count(array('conditions'=> 'user='.$user->id_user. ' and state like \'Win\''));
+?>
 <div id="page-container">
     <div class="section_" id="content-wrap">
         <div>
@@ -13,13 +16,13 @@ Layout::includeLayout('homeheader'); ?>
             <div class="container" style="text-align: center">
                 <div class="row">
                     <div class="col-md-4">
-                        <h1>Jogos: 2</h1>
+                        <h1>Jogos: <?=$games ?></h1>
                     </div>
                     <div class="col-md-4">
-                        <h1>Ganhos: 0</h1>
+                        <h1>Ganhos: <?=$win ?></h1>
                     </div>
                     <div class="col-md-4">
-                        <h1>Perdas: 2</h1>
+                        <h1>Perdas: <?=$lost ?></h1>
                     </div>
                 </div>
             </div>
@@ -34,8 +37,6 @@ Layout::includeLayout('homeheader'); ?>
                                     <table class="table table-striped table-bordered table-list">
                                         <thead>
                                         <tr>
-                                            <th><em class="fa fa-cog"></em></th>
-                                            <th class="hidden-xs">ID</th>
                                             <th>Score</th>
                                             <th>State</th>
                                             <th>Data</th>
@@ -44,15 +45,11 @@ Layout::includeLayout('homeheader'); ?>
                                         <tbody>
                                         <?php
                                         foreach ($scores as &$row) {?>
-                                            <tr class="click_categories"
-                                                data-href='manage.php?id_category=<?=$row[0]?>'>
-                                                <td align="center">
-                                                    <a class="btn btn-danger"><em class="fa fa-crosshairs"></em></a>
-                                                </td>
-                                                <td><?= $row[0] ?></td>
-                                                <td><?= $row[2] ?></td>
-                                                <td><?= $row[3] ?></td>
-                                                <td><?= $row[4] ?></td></tr>
+                                            <tr>
+                                                <td><?= $row->score ?></td>
+                                                <td><?= $row->state?></td>
+                                                <td><?= $row->data->format('d-m-Y H:i') ?></td>
+                                            </tr>
                                         <?php }?>
                                         </tbody>
                                     </table>

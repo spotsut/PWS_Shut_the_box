@@ -1,6 +1,7 @@
 <?php
 
 use ArmoredCore\WebObjects\Post;
+use ArmoredCore\WebObjects\Redirect;
 use ArmoredCore\WebObjects\Session;
 use ArmoredCore\WebObjects\View;
 
@@ -9,22 +10,37 @@ class UserController
 {
     public function register()
     {
-        $msg = new Register();
-        $msg->nickname_user = Post::get('nick');
-        $msg->email_user = Post::get('email');
-        $pass = Post::get('password');
-        $msg->msg = $msg->register_user($msg->nickname_user,  $msg->email_user, $pass);
+        $user = new User();
+        $user->nickname = Post::get('nickname');
+        $user->firstname = Post::get('firstname');
+        $user->lastname = Post::get('lastname');
+        $user->email = Post::get('email');
+        $user->password = Post::get('password');
 
-        return View::make('user.register', ['msg' => $msg]);
+        if($user->is_valid()) {
+            $user->save();
+            Redirect::toRoute('user/index');
+        }
+        else {
+            Redirect::flashToRoute('user/register',  ['user' => $user]);
+        }
     }
 
-    public function login (){
-        $msg = new Login();
-        $msg->email_user = Post::get('email');
-        $pass = Post::get('password');
-        $msg->msg = $msg->login_user($msg->email_user, $pass);
-
-        return View::make('user.index', ['msg' => $msg]);
+    public function login()
+    {
+        if(User::exists(array('email' => Post::get('email'), 'password' => Post::get('password')))) {
+            $user = User::find(array('email' => Post::get('email')));
+            if($user->bloqueado != 1) {
+                Session::set('user', $user);
+                Redirect::toRoute('home/home');
+            }
+            else {
+                Redirect::flashToRoute('user/index', ['bloqueado' => true, 'errado' => false]);
+            }
+        }
+        else {
+            Redirect::flashToRoute('user/index', ['errado' => true, 'bloqueado' => false]);
+        }
     }
 
     public function logout()
@@ -35,13 +51,36 @@ class UserController
 
     public function atualizar()
     {
-        $id = Session::get('user');
-        $atualizar = new AtualizarUser();
-        $nick = Post::get('nickname');
-        $nome = Post::get('firstname');
-        $apelido = Post::get('lastname');
-        $email = Post::get('email');
-        $atualizar->autalizar($id[0], $nick,$nome,$apelido, $email);
-        return View::make('home.perfil');
+        $user = Session::get('user');
+
+        $user->nickname = Post::get('nickname');
+        $user->firstname = Post::get('firstname');
+        $user->lastname = Post::get('lastname');
+        $user->email = Post::get('email');
+        $user->password = Post::get('password');
+        $user->genero = Post::get('gender');
+
+        Session::set('user', $user);
+
+        if($user->is_valid()) {
+            $user->save();
+            Redirect::toRoute('home/perfil');
+        }
+        else {
+            Redirect::toRoute('jogo/perfil');
+        }
+    }
+    public function ban($id){
+        $user = User::find($id);
+
+        if($user->bloqueado == 0) {
+            $user->bloqueado = 1;
+        }
+        else {
+            $user->bloqueado = 0;
+        }
+        $user->save();
+
+        Redirect::toRoute('home/ban');
     }
 }

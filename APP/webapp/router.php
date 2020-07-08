@@ -27,6 +27,7 @@ Router::post('user/register', 'UserController/register');
 Router::post('user/index', 'UserController/login');
 Router::get('user/logout', 'UserController/logout');
 Router::post('user/atualizar', 'UserController/atualizar');
+Router::get('user/ban', 'UserController/ban');
 
 
 /************ GAME ***********/

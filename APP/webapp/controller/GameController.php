@@ -42,11 +42,11 @@ class GameController
     {
         $engine = Session::get('gameEngine');
        // $engine = new GameEngine();
-        Tracy\Debugger::barDump($number);
+
         $somaDados = $engine->tabuleiro->resultadoDado1 + $engine->tabuleiro->resultadoDado2;
 
         $seletor = $engine->tabuleiro->numeroBloqueioP1->seletorNumeros;
-
+        Tracy\Debugger::barDump($engine);
         if ($seletor->validateNumber($number, $engine->tabuleiro->numeroBloqueioP1)) {
             $seletor->updateSelection($number);
 
@@ -57,6 +57,7 @@ class GameController
                 $seletor->clearSelection();
             }
         }
+
         Session::set('gameEngine', $engine);
         return View::make('home.home', ['ge' => $engine]);
     }

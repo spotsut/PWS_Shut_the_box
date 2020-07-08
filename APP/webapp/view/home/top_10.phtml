@@ -21,25 +21,21 @@ Layout::includeLayout('homeheader'); ?>
                                     <table class="table table-striped table-bordered table-list">
                                         <thead>
                                         <tr>
-                                            <th><em class="fa fa-cog"></em></th>
-                                            <th class="hidden-xs">ID</th>
                                             <th>Jogador</th>
                                             <th>Score</th>
+                                            <th>State</th>
                                             <th>Data</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                        <?php
-                                       foreach ($scores as &$row) {?>
-                                            <tr class="click_categories"
-                                                data-href='manage.php?id_category=<?=$row[0]?>'>
-                                                <td align="center">
-                                                    <a class="btn btn-danger"><em class="fa fa-crosshairs"></em></a>
-                                                </td>
-                                                <td><?= $row[0] ?></td>
-                                                <td><?= $row[1] ?></td>
-                                                <td><?= $row[2] ?></td>
-                                                <td><?= $row[4] ?></td>
+                                       foreach ($scores as &$row) {
+                                           $user = User::find($row->user);?>
+                                            <tr>
+                                                <td><?= $user->nickname ?></td>
+                                                <td><?= $row->score ?></td>
+                                                <td><?= $row->state ?></td>
+                                                <td><?= $row->data->format('d-m-Y H:i') ?></td>
                                             </tr>
                                         <?php }?>
                                         </tbody>
