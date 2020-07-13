@@ -5,17 +5,14 @@ use ArmoredCore\WebObjects\View;
 
 class GameController
 {
-    public function home() {
-        $engine= null;
-        if(!Session::has('gameEngine')) {
-            $engine = new GameEngine();
-            Session::set('gameEngine', $engine);
-        }
+    public function home()
+    {
         $engine = new GameEngine();
-        return View::make('home.home', ['ge'=> $engine]);
+        return View::make('home.home', ['ge' => $engine]);
     }
 
-    public function iniciarJogo() {
+    public function iniciarJogo()
+    {
 
         if (!Session::has('gameEngine')) {
             $engine = new GameEngine();
@@ -25,36 +22,66 @@ class GameController
         $engine->iniciarJogo();
         $engine->updateEstadoJogo(1);
         Session::set('gameEngine', $engine);
+
         return View::make('home.home', ['ge' => $engine]);
     }
 
     public function rolarDados()
     {
         $engine = Session::get('gameEngine');
-        $engine->rolarDados();
-        $engine->updateEstadoJogo(2);
-        Session::set('gameEngine', $engine);
 
+        if ($engine->getEstadoJogo() != 2 && $engine->getEstadoJogo() != 4) {
+            $engine->rolarDados();
+        }
+
+        if ($engine->getEstadoJogo() == 1) {
+            $engine->updateEstadoJogo(2);
+        } else if ($engine->getEstadoJogo() == 3) {
+            $engine->updateEstadoJogo(4);
+        }
+
+        if ($engine->tabuleiro->checkFinalJogadaP1($engine->tabuleiro->somaDados)) {
+            $engine->updateEstadoJogo(4);
+        }
+
+        if ($engine->tabuleiro->checkFinalJogadaP2($engine->tabuleiro->somaDados)) {
+            $engine->updateEstadoJogo(5);
+
+            $user = Session::get('user');
+            $score = new Score();
+            $score->score = $engine->tabuleiro->getPointsVencedor();
+            $score->user = $user->id_user;
+
+            if ($engine->tabuleiro->getVencedor() == 1) {
+                $score->state = 'Win';
+            } else if ($engine->tabuleiro->getVencedor() == 2) {
+                $score->state = 'Lost';
+            } else {
+                $score->state = 'Tie';
+            }
+
+            $score->save();
+          //  $engine->updateEstadoJogo(1);
+        }
+        Session::set('gameEngine', $engine);
         return View::make('home.home', ['ge' => $engine]);
     }
 
-    public function selecionaNumeroP1($number)
+    public function selecionaNumero($number)
     {
         $engine = Session::get('gameEngine');
-       // $engine = new GameEngine();
 
-        $somaDados = $engine->tabuleiro->resultadoDado1 + $engine->tabuleiro->resultadoDado2;
-
-        $seletor = $engine->tabuleiro->numeroBloqueioP1->seletorNumeros;
-        Tracy\Debugger::barDump($engine);
-        if ($seletor->validateNumber($number, $engine->tabuleiro->numeroBloqueioP1)) {
-            $seletor->updateSelection($number);
-
-            if ($seletor->checkSelectionTotal($somaDados)) {
-                $engine->updateEstadoJogo();
-
-                $engine->tabuleiro->numeroBloqueioP1->bloquearNumeros($seletor->getNumerosSelecionados(), $somaDados);
-                $seletor->clearSelection();
+        if ($engine->getEstadoJogo() == 2) {
+            $engine->tabuleiro->numeroBloqueioP1->seletorNumeros->updateSelection($number);
+            if ($engine->tabuleiro->numeroBloqueioP1->bloquearNumeros($engine->tabuleiro->somaDados)) {
+                $engine->updateEstadoJogo(1);
+                $engine->tabuleiro->numeroBloqueioP1->seletorNumeros->clearSelection();
+            }
+        } else if ($engine->getEstadoJogo() == 4) {
+            $engine->tabuleiro->numeroBloqueioP2->seletorNumeros->updateSelection($number);
+            if ($engine->tabuleiro->numeroBloqueioP2->bloquearNumeros($engine->tabuleiro->somaDados)) {
+                $engine->updateEstadoJogo(3);
+                $engine->tabuleiro->numeroBloqueioP2->seletorNumeros->clearSelection();
             }
         }
 

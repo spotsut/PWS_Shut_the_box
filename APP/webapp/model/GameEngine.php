@@ -4,7 +4,7 @@
 class GameEngine
 {
     public $tabuleiro;
-    private $estadoJogo= 0;
+    private $estadoJogo;
 
     public function iniciarJogo() {
         $this->tabuleiro = new Tabuleiro();

@@ -1,13 +1,14 @@
-<?php use ArmoredCore\WebObjects\Layout;
-use ArmoredCore\WebObjects\Data;
+<?php use ArmoredCore\WebObjects\Data;
+use ArmoredCore\WebObjects\Layout;
 use ArmoredCore\WebObjects\Session;
-use ArmoredCore\WebObjects\URL;
+
 $user = Session::get('user');
 Layout::includeLayout('homeheader');
 $scores = Data::get('scores');
-$games = Score::count(array('conditions'=> 'user='.$user->id_user));
-$lost = Score::count(array('conditions'=> 'user='.$user->id_user. ' and state like \'Lost\''));
-$win = Score::count(array('conditions'=> 'user='.$user->id_user. ' and state like \'Win\''));
+$games = Score::count(array('conditions' => 'user=' . $user->id_user));
+$lost = Score::count(array('conditions' => 'user=' . $user->id_user . ' and state like \'Lost\''));
+$win = Score::count(array('conditions' => 'user=' . $user->id_user . ' and state like \'Win\''));
+$tie = Score::count(array('conditions' => 'user=' . $user->id_user . ' and state like \'Tie\''));
 ?>
 <div id="page-container">
     <div class="section_" id="content-wrap">
@@ -15,15 +16,24 @@ $win = Score::count(array('conditions'=> 'user='.$user->id_user. ' and state lik
             <h1 style="text-align: center; width: 100% ">Scores Pessoais</h1>
             <div class="container" style="text-align: center">
                 <div class="row">
-                    <div class="col-md-4">
-                        <h1>Jogos: <?=$games ?></h1>
-                    </div>
-                    <div class="col-md-4">
-                        <h1>Ganhos: <?=$win ?></h1>
-                    </div>
-                    <div class="col-md-4">
-                        <h1>Perdas: <?=$lost ?></h1>
-                    </div>
+                    <table class="table " style="text-align: center;">
+                        <thead>
+                        <tr style="text-align: center;">
+                            <th style="text-align: center;">Jogos:</th>
+                            <th style="text-align: center;">Ganhos:</th>
+                            <th style="text-align: center;">Perdas:</th>
+                            <th style="text-align: center;">Empates:</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td style="text-align: center;"> <?= $games ?></td>
+                            <td style="text-align: center;"> <?= $win ?></td>
+                            <td style="text-align: center;"> <?= $lost ?></td>
+                            <td style="text-align: center;"> <?= $tie ?></td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -44,13 +54,13 @@ $win = Score::count(array('conditions'=> 'user='.$user->id_user. ' and state lik
                                         </thead>
                                         <tbody>
                                         <?php
-                                        foreach ($scores as &$row) {?>
+                                        foreach ($scores as &$row) { ?>
                                             <tr>
                                                 <td><?= $row->score ?></td>
-                                                <td><?= $row->state?></td>
+                                                <td><?= $row->state ?></td>
                                                 <td><?= $row->data->format('d-m-Y H:i') ?></td>
                                             </tr>
-                                        <?php }?>
+                                        <?php } ?>
                                         </tbody>
                                     </table>
 
@@ -65,5 +75,5 @@ $win = Score::count(array('conditions'=> 'user='.$user->id_user. ' and state lik
 
     </div>
     <?php Layout::includeLayout('footer');
-    Tracy\Debugger::barDump($scores);?>
+    Tracy\Debugger::barDump($scores); ?>
 </div>

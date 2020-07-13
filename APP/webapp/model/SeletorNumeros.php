@@ -16,16 +16,13 @@ class SeletorNumeros
         }
     }
 
-    public function getNumeroSelecionado()
-    {
-
-    }
-
     public function updateSelection($userNumber)
     {
-        if (in_array($userNumber, $this->numerosSelecionados) == true) {
-
-        } else {
+        if($this->selectionHasNumber($userNumber)){
+            $index = array_search($userNumber, $this->numerosSelecionados);
+            unset($this->numerosSelecionados[$index]);
+        }
+        else {
             array_push($this->numerosSelecionados, $userNumber);
         }
     }
@@ -45,7 +42,8 @@ class SeletorNumeros
 
     public function clearSelection()
     {
-
+        unset($this->numerosSelecionados);
+        $this->numerosSelecionados = array();
     }
 
     public function selectionHasNumber($number)

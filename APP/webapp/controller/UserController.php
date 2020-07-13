@@ -15,30 +15,29 @@ class UserController
         $user->firstname = Post::get('firstname');
         $user->lastname = Post::get('lastname');
         $user->email = Post::get('email');
-        $user->password = Post::get('password');
+        $password = base64_encode(hash("sha256", mb_convert_encoding(Post::get('password'), "UTF-16LE"), true));
+        $user->password = $password;
 
-        if($user->is_valid()) {
+        if ($user->is_valid()) {
             $user->save();
             Redirect::toRoute('user/index');
-        }
-        else {
-            Redirect::flashToRoute('user/register',  ['user' => $user]);
+        } else {
+            Redirect::flashToRoute('user/register', ['user' => $user]);
         }
     }
 
     public function login()
     {
-        if(User::exists(array('email' => Post::get('email'), 'password' => Post::get('password')))) {
+        $password = base64_encode(hash("sha256", mb_convert_encoding(Post::get('password'), "UTF-16LE"), true));
+        if (User::exists(array('email' => Post::get('email'), 'password' => $password))) {
             $user = User::find(array('email' => Post::get('email')));
-            if($user->bloqueado != 1) {
+            if ($user->bloqueado != 1) {
                 Session::set('user', $user);
                 Redirect::toRoute('home/home');
-            }
-            else {
+            } else {
                 Redirect::flashToRoute('user/index', ['bloqueado' => true, 'errado' => false]);
             }
-        }
-        else {
+        } else {
             Redirect::flashToRoute('user/index', ['errado' => true, 'bloqueado' => false]);
         }
     }
@@ -57,26 +56,29 @@ class UserController
         $user->firstname = Post::get('firstname');
         $user->lastname = Post::get('lastname');
         $user->email = Post::get('email');
-        $user->password = Post::get('password');
+        if (Post::get('password') != '') {
+            $password = base64_encode(hash("sha256", mb_convert_encoding(Post::get('password'), "UTF-16LE"), true));
+            $user->password = $password;
+        }
         $user->genero = Post::get('gender');
 
         Session::set('user', $user);
 
-        if($user->is_valid()) {
+        if ($user->is_valid()) {
             $user->save();
             Redirect::toRoute('home/perfil');
-        }
-        else {
+        } else {
             Redirect::toRoute('jogo/perfil');
         }
     }
-    public function ban($id){
+
+    public function ban($id)
+    {
         $user = User::find($id);
 
-        if($user->bloqueado == 0) {
+        if ($user->bloqueado == 0) {
             $user->bloqueado = 1;
-        }
-        else {
+        } else {
             $user->bloqueado = 0;
         }
         $user->save();
